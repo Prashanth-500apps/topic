@@ -1,18 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view />
+    <!-- <Question6 refs="world" name="saiPrashanth">{{name}}</Question6> -->
+    <button-submit type="submit" @click="result()">Your Profile</button-submit> 
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import Question6 from './components/Question6.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+  // Question6
+  },
+  mounted: function(){
+    this.name = this.$refs.name
+  },
+  methods:{
+  result(){
+    document.write("Hellooo");
   }
+}
 }
 </script>
 
