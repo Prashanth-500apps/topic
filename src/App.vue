@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <router-view />
-    <!-- <Question6 refs="world" name="saiPrashanth">{{name}}</Question6> -->
-    <button-submit type="submit" @click="result()">Your Profile</button-submit> 
+    <!-- <Question6  ref="sai"></Question6> 
+    <button type="submit" @click="func()">Click</button> -->
+    <!-- <button-submit type="submit" @click="result()">Your Profile</button-submit>  -->
   </div>
 </template>
 
@@ -12,15 +13,16 @@
 export default {
   name: 'App',
   components: {
-  // Question6
-  },
-  mounted: function(){
-    this.name = this.$refs.name
+  //Question6
   },
   methods:{
-  result(){
-    document.write("Hellooo");
-  }
+  // result(){
+  //   document.write("Hellooo");
+  // },
+  // func(){
+    
+  //   this.$refs.sai.fun()
+  // },
 }
 }
 </script>

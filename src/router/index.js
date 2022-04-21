@@ -14,6 +14,7 @@ import Question10 from '../components/Question10'
 
 
 
+
 Vue.use(Router)
 
 const routes = [

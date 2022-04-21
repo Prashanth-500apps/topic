@@ -7,10 +7,14 @@
 
 <script>
 export default {
-  name: "QuE6",
-
+  name: "QuestioN6",
   props: {
     name: String ,
   },
+  methods:{
+    fun(){
+      document.write("HI");
+    }
+  }
 };
 </script>

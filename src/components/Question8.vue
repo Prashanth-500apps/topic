@@ -1,6 +1,6 @@
 <template>
-  <div align="center">
-   <b-row><b-col md="6"><b-table :items="items" :fields="fields" align="center"></b-table></b-col></b-row>
+  <div >
+  <b-table :items="items" :fields="fields" ></b-table>
   </div>
 </template>
 

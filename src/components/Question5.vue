@@ -11,12 +11,13 @@ export default {
     return {
        firstname: "Mantra",
        lastname: "Technologies",
+       fullname:"",
     };
   },
   methods: {
     fullnameis() {
-      var fullname = this.firstname +" " + this.lastname;
-      document.write(fullname);
+       this.fullname = this.firstname +" " + this.lastname;
+      document.write(this.fullname);
     },
   },
 };
