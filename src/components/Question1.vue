@@ -116,7 +116,7 @@ export default {
     },
     fin() {
       var res = this.array.find((sample) => {
-        return sample.includes("t");
+        return sample.includes(this.value);
       });
       console.log(res);
     },
