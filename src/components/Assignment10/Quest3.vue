@@ -1,6 +1,9 @@
-<!--Global Registration  =>
+<template>
+  <div>
+    
+<h1>Global Registration</h1> 
 
-So far, we’ve only created components using Vue.component:
+<p>So far, we’ve only created components using Vue.component:
 
 Vue.component('my-component-name', {
   // ... options ...
@@ -12,16 +15,16 @@ Vue.component('component-b', { /* ... */ })
 Vue.component('component-c', { /* ... */ })
 
 new Vue({ el: '#app' })
-<div id="app">
+<!--<div id="app">
   <component-a></component-a>
   <component-b></component-b>
   <component-c></component-c>
-</div>
-This even applies to all subcomponents, meaning all three of these components will also be available inside each other.-->
+</div>-->
+This even applies to all subcomponents, meaning all three of these components will also be available inside each other </p>
 
-<!-- Local Registration =>
+<h1> Local Registration </h1>
 
-Global registration often isn’t ideal. For example, if you’re using a build system like Webpack, globally registering all components means that even if you stop using a component, it could still be included in your final build. This unnecessarily increases the amount of JavaScript your users have to download.
+<p>Global registration often isn’t ideal. For example, if you’re using a build system like Webpack, globally registering all components means that even if you stop using a component, it could still be included in your final build. This unnecessarily increases the amount of JavaScript your users have to download.
 
 In these cases, you can define your components as plain JavaScript objects:
 
@@ -37,4 +40,20 @@ new Vue({
     'component-b': ComponentB
   }
 })
-For each property in the components object, the key will be the name of the custom element, while the value will contain the options object for the component.-->
+For each property in the components object, the key will be the name of the custom element, while the value will contain the options object for the component.</p>
+</div>
+</template>
+
+<script>
+
+
+export default {
+  name:"QuesT3",
+  data(){
+    return{
+
+    }
+  }
+}
+
+</script>

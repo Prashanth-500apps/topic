@@ -2,29 +2,30 @@
     <div>
         <b-button type="submit" @click="getData" >GetData</b-button>
         <b-table striped hover :items="items"></b-table>
+        {{items}}
     </div>
 </template>
 
 <script>
-
+import axios from "axios"
 export default {
     name:"QuE7",
     data(){
         return{
-          items:[]
+          items:[],
+          fin:"",
         }
     },
     methods:{
         async getData() {
-           const response = await fetch("http://universities.hipolabs.com/search?country");
-           const responseText = await response.json();
-           this.items = responseText
+           let response = await axios.get("https://www.templatemonster.com/free-html-website-templates/");
+        //    let responseText = await response.json();
+           this.items = JSON.stringify(response)
            }   
     },
-    mounted() {
-    this.items.$nextTick(() => {
-     document.getElementsByTagName("<a>").innerHTML
-  })
-    }
+    // mounted() {
+    //  this.fin = document.getElementsByTagName("a")
+    //  console.log(this.fin)
+    // }
 }
 </script>

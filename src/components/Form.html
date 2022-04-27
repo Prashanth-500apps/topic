@@ -1,0 +1,81 @@
+<!-- <html>
+    <body>
+        <h1> Entered Data </h1>
+         <form name="myform" >
+        Name :<input type="text" name="name" id="sample1" >
+        Mail :<input type="text"  mail="email" id="sample2" >
+        Age :<input type="number"  number="number" id="sample3"> 
+        <button type="submit" onclick="res()" >Submit</button>
+        </form>
+        <script>
+            function res(){
+               var result =  [...document.links].map(l => l.https://www.templatemonster.com/free-html-website-templates/)
+               console.log(result)
+               // document.write(document.getElementById("sample1").value +" "+document.getElementById("sample2").value+" "+document.getElementById("sample3").value)
+            }
+            </script>
+    </body>
+</html> -->
+
+<html>
+<head>
+    <title>Pull Domains form a page</title>
+</head>
+<body>
+<div class="card-deck">
+<div class="card mb-3" style="min-width: 10rem;"><div class="card-body"><a href="https://agilecrm.com/sitemap.xml">Link 1</a></div></div>
+<!-- <div class="card mb-3" style="min-width: 10rem;"><div class="card-body"><a href="http://www.apple.com">Link 2</a></div></div>
+<div class="card mb-3" style="min-width: 10rem;"><div class="card-body"><a href="http://www.cnn.com.au">Link 3</a></div></div>
+<div class="card mb-3" style="min-width: 10rem;"><div class="card-body"><a href="http://downloads.news.com.au">Link 4</a></div></div>
+<div class="card mb-3" style="min-width: 10rem;"><div class="card-body"><a href="http://ftp.android.co.nz">Link 5</a></div></div>
+<div class="card mb-3" style="min-width: 10rem;"><div class="card-body"><a href="http://global.news.ca">Link 6</a></div></div>
+<div class="card mb-3" style="min-width: 10rem;"><div class="card-body"><a href="https://www.apple.com">Link 7</a></div></div>
+<div class="card mb-3" style="min-width: 10rem;"><div class="card-body"><a href="https://mira.mx/">Link 8</a></div></div>
+<div class="card mb-3" style="min-width: 10rem;"><div class="card-body"><a href="http://www.qs.com/">Link 9</a></div></div>
+<div class="card mb-3" style="min-width: 10rem;"><div class="card-body"><a href="http://pbs.org">Link 10</a></div></div> -->
+</div>
+<div id="domains"></div>
+<script>
+   var re = /^((http[s]?|ftp|mailto):(?:\/\/)?)?\/?(([^\/\.]+\.)*?([^\/\.]+\.[^:\/\s\.]{1,4})?(\.[^:\/\s\.]{1,2})?(:\d+)?)($|\/)([^#?\s]+)?(.*?)?(#[\w\-]+)?$/i;
+var reG = /^((http[s]?|ftp|mailto):(?:\/\/)?)?\/?(([^\/\.]+\.)*?([^\/\.]+\.[^:\/\s\.]{1,4})?(\.[^:\/\s\.]{1,2})?(:\d+)?)($|\/)([^#?\s]+)?(.*?)?(#[\w\-]+)?$/ig;
+var printList = document.getElementById("domains");
+var unorderedList =  document.createElement("ul");
+unorderedList.setAttribute("id", "domainsList");
+unorderedList.setAttribute("class", "list-group");
+printList.appendChild(unorderedList);
+var domainsList = document.getElementById("domainsList");
+
+
+var list = document.getElementsByTagName("a");
+//console.log(list);
+var listArray = Array.from(list);
+
+//loop through the list
+listArray.forEach(function(link){
+	//console.log(link.href);
+  //console.log(typeof(link.href));
+
+var listItem =  document.createElement("li");
+listItem.setAttribute("class", "list-group-item domain"); 
+domainsList.appendChild(listItem);
+  var str = link.href;
+  var match = str.match(reG);
+  var matchGroup = str.match(re);
+  //console.log(matchGroup[5]);
+  var domainNode = document.createTextNode("Domain: " + matchGroup[5]);
+  listItem.appendChild(domainNode);
+  var breakNode  =  document.createElement("br");
+  listItem.appendChild(breakNode);
+  var websiteNode = document.createTextNode("Website: " + matchGroup[3]);
+  listItem.appendChild(websiteNode);
+  var breakNode  =  document.createElement("br");
+  listItem.appendChild(breakNode);
+  var fullNode = document.createTextNode("Full Link: " + match);
+  listItem.appendChild(fullNode);
+  domainsList.appendChild(listItem);
+  unorderedList.appendChild(listItem)
+});
+</script>
+
+</body>
+</html>
